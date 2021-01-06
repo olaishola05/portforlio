@@ -19,7 +19,7 @@
             }
 
             &__link {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
             }
         }
     }
@@ -30,15 +30,50 @@
 
     .projects {
         &__bio-image {
-            height: 40vh;
+            height: 60vh;
         }
 
-        &__items {
-            grid-template-columns: repeat(3, 1fr);
+        &__lists {
+            grid-template-columns: repeat(2, 1fr);
         }
 
         .text-secondary {
             font-size: 3rem;
         }
+    }
+
+    .contact__list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include media-lg {
+    .home {
+        height: 100%;
+        overflow: hidden;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(
+                to right,
+                rgba($primary-color, 0.9),
+                rgba($primary-color, 0.3)
+            ),
+            url("/dist/img/me.jpg") center top;
+        background-size: cover;
+    }
+    .projects {
+        &__lists {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .contact__list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@include media-xl {
+    .projects__bio-image {
+        height: 50vh;
     }
 }
